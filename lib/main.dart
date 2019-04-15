@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import './bottom_navigation_widget.dart';
 import './bottom_appBar_demo.dart';
+import './animation_pages.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -35,6 +36,16 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context, 
                 MaterialPageRoute(builder: (context) => BottomAppBarDemo()),
+              );
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text('3 酷炫的动画路由'),
+            onTap: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => FirstPage()),
               );
             },
           ),
