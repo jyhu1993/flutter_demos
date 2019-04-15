@@ -50,6 +50,16 @@ class Home extends StatelessWidget {
             },
           ),
           Divider(),
+          ListTile(
+            title: Text('4 毛玻璃效果'),
+            onTap: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => FirstPage()),
+              );
+            },
+          ),
+          Divider(),
         ],
       )
     );
