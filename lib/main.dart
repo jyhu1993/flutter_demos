@@ -3,6 +3,7 @@ import './bottom_navigation_widget.dart';
 import './bottom_appBar_demo.dart';
 import './animation_pages.dart';
 import './frosted_glass_demo.dart';
+import './keep_alive_demo.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -57,6 +58,16 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context, 
                 MaterialPageRoute(builder: (context) => FrostedGlassDemo()),
+              );
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text('4 保持页面状态'),
+            onTap: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => KeepAliveDemo()),
               );
             },
           ),
