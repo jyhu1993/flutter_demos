@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import './bottom_navigation_widget.dart';
 import './bottom_appBar_demo.dart';
 import './animation_pages.dart';
+import './frosted_glass_demo.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -55,7 +56,7 @@ class Home extends StatelessWidget {
             onTap: (){
               Navigator.push(
                 context, 
-                MaterialPageRoute(builder: (context) => FirstPage()),
+                MaterialPageRoute(builder: (context) => FrostedGlassDemo()),
               );
             },
           ),
