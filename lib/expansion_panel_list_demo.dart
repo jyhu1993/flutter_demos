@@ -47,6 +47,30 @@ class _ExpansionPanelListDemoState extends State<ExpansionPanelListDemo> {
       appBar: AppBar(
         title: Text('expansion panel list'),
       ),
+      // 加入可滚动组件
+      body: SingleChildScrollView(
+        child: ExpansionPanelList(
+          // 回调函数
+          expansionCallback: (index, bol){
+            print(index);
+            print(bol);
+            _setCurrentIndex(index, bol);
+          },
+          children: mList.map((index){
+            return ExpansionPanel(
+              headerBuilder: (context, isExpanded){
+                return ListTile(
+                  title: Text('This is No. $index'),
+                );
+              },
+              body: ListTile(
+                title: Text('expansion no.$index'),
+              ),
+              isExpanded: expandStateList[index].isOpen,
+            );
+          }).toList(),
+        ),
+      ),
     );
   }
 }
