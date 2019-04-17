@@ -5,6 +5,7 @@ import './animation_pages.dart';
 import './frosted_glass_demo.dart';
 import './keep_alive_demo.dart';
 import './search_bar_demo.dart';
+import './wrap_demo.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -79,6 +80,16 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context, 
                 MaterialPageRoute(builder: (context) => SearchBarDemo()),
+              );
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text('7 流式布局 模拟添加照片效果'),
+            onTap: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => WrapDemo()),
               );
             },
           ),
