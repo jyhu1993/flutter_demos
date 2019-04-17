@@ -9,6 +9,7 @@ import './wrap_demo.dart';
 import './expansion_tile_demo.dart';
 import './expansion_panel_list_demo.dart';
 import './clip_path.dart';
+import './right_back_demo.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -124,6 +125,16 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context, 
                 MaterialPageRoute(builder: (context) => ClipPathDemo()),
+              );
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text('11 右滑返回上一页'),
+            onTap: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => RightBackDemo()),
               );
             },
           ),
