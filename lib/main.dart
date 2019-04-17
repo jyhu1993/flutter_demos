@@ -7,6 +7,7 @@ import './keep_alive_demo.dart';
 import './search_bar_demo.dart';
 import './wrap_demo.dart';
 import './expansion_tile_demo.dart';
+import './expansion_panel_list_demo.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -101,6 +102,16 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context, 
                 MaterialPageRoute(builder: (context) => ExpansionTileDemo()),
+              );
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text('9 展开闭合列表案例'),
+            onTap: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => ExpansionPanelListDemo()),
               );
             },
           ),
