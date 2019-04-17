@@ -4,6 +4,7 @@ import './bottom_appBar_demo.dart';
 import './animation_pages.dart';
 import './frosted_glass_demo.dart';
 import './keep_alive_demo.dart';
+import './search_bar_demo.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -63,11 +64,21 @@ class Home extends StatelessWidget {
           ),
           Divider(),
           ListTile(
-            title: Text('4 保持页面状态'),
+            title: Text('5 保持页面状态'),
             onTap: (){
               Navigator.push(
                 context, 
                 MaterialPageRoute(builder: (context) => KeepAliveDemo()),
+              );
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text('6 一个不简单的搜索框'),
+            onTap: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => SearchBarDemo()),
               );
             },
           ),
