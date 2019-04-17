@@ -17,11 +17,15 @@ class _KeepAliveDemoState extends State<KeepAliveDemo> with SingleTickerProvider
 
   @override
   void initState(){
+    super.initState();
+    print('initial');
     _controller = TabController(length: 3, vsync: this);
   }
 
   @override
   void dispose(){
+    super.dispose();
+    print('dispose');
     _controller.dispose();
   }
 
@@ -42,10 +46,51 @@ class _KeepAliveDemoState extends State<KeepAliveDemo> with SingleTickerProvider
       body: TabBarView(
         controller: _controller,
         children: <Widget>[
-          Text('111'),
-          Text('222'),
-          Text('333'),
+          MyHomePage(),
+          MyHomePage(),
+          MyHomePage(),
         ],
+      ),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> with AutomaticKeepAliveClientMixin {
+  int _counter = 0;
+  // 重写keepAlive为true, 就可以有记忆功能
+  @override
+  bool get wantKeepAlive => true;
+
+  void _incrementCounter(){
+    setState(() {
+     _counter++; 
+    });
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Text('点一下加1'),
+            Text(
+              '$_counter',
+              style: Theme.of(context).textTheme.display1,
+            )
+          ],
+        ),
+      ),
+      // 增加一个悬浮按钮，点击时触发_incrementCounter方法；
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        tooltip: 'Increment',
+        onPressed: _incrementCounter,
       ),
     );
   }
