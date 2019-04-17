@@ -8,10 +8,12 @@ import './search_bar_demo.dart';
 import './wrap_demo.dart';
 import './expansion_tile_demo.dart';
 import './expansion_panel_list_demo.dart';
+import './clip_path.dart';
 
 void main() {
   runApp(MaterialApp(
     title: '10个练习demo',
+    debugShowCheckedModeBanner: false,
     theme: ThemeData(
       primarySwatch: Colors.lightBlue
     ),
@@ -112,6 +114,16 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context, 
                 MaterialPageRoute(builder: (context) => ExpansionPanelListDemo()),
+              );
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text('10 贝塞尔曲线切割'),
+            onTap: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => ClipPathDemo()),
               );
             },
           ),
