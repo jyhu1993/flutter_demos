@@ -6,6 +6,7 @@ import './frosted_glass_demo.dart';
 import './keep_alive_demo.dart';
 import './search_bar_demo.dart';
 import './wrap_demo.dart';
+import './expansion_tile_demo.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -90,6 +91,16 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context, 
                 MaterialPageRoute(builder: (context) => WrapDemo()),
+              );
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text('8 展开闭合案例'),
+            onTap: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => ExpansionTileDemo()),
               );
             },
           ),
