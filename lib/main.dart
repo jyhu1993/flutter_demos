@@ -10,6 +10,7 @@ import './expansion_tile_demo.dart';
 import './expansion_panel_list_demo.dart';
 import './clip_path.dart';
 import './right_back_demo.dart';
+import './draggable_demo.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -135,6 +136,16 @@ class Home extends StatelessWidget {
               Navigator.push(
                 context, 
                 MaterialPageRoute(builder: (context) => RightBackDemo()),
+              );
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text('12 拖拽控件'),
+            onTap: (){
+              Navigator.push(
+                context, 
+                MaterialPageRoute(builder: (context) => DraggableDemo()),
               );
             },
           ),
